@@ -18,14 +18,14 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           # TODO Change your AWS region here!
           aws-region: us-east-2
-      # - name: Deploy to my EC2 instance
-      #   uses: easingthemes/ssh-deploy@v2.1.5
-      #   env:
-      #     SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-      #     SOURCE: "./"
-      #     REMOTE_HOST: "ec2-34-213-48-149.us-west-2.compute.amazonaws.com"
-      #     REMOTE_USER: "ec2-user"
-      #     TARGET: "/home/ec2-user/SampleExpressApp"
+      - name: Deploy to my EC2 instance
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          SOURCE: "./"
+          REMOTE_HOST: "ec2-3-145-10-182.us-east-2.compute.amazonaws.com"
+          REMOTE_USER: "ec2-user"
+          TARGET: "/home/ec2-user/Nodejs"
       # - name: Set Node.js 16.x
       #   uses: actions/setup-node@v3
       #   with:
