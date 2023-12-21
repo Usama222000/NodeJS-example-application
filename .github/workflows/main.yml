@@ -10,7 +10,6 @@ jobs:
     steps:
       - name: Checkout Source
         uses: actions/checkout@v3 
-      - run: mkdir test && cd test
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
