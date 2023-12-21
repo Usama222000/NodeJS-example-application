@@ -28,4 +28,4 @@ jobs:
           CONTAINER_NAME=nodejs
           sudo docker stop $CONTAINER_NAME || true
           sudo docker rm $CONTAINER_NAME || true
-          sudo docker run -p 5000:5000 --name $CONTAINER_NAME nodetest
+          sudo docker run -d -p 5000:5000 --name $CONTAINER_NAME nodetest
