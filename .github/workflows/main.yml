@@ -6,23 +6,23 @@ on:
     
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout Source
         uses: actions/checkout@v3 
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          # TODO Change your AWS region here!
-          aws-region: us-east-1
-      - name: Deploy to my EC2 instance
-        uses: easingthemes/ssh-deploy@v2.1.6
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-          SOURCE: "./"
-          REMOTE_HOST: "ec2-3-145-10-182.us-east-2.compute.amazonaws.com"
-          REMOTE_USER: "ec2-user"
-          TARGET: "/home/ec2-user/SampleExpressApp"
+      # - name: Configure AWS credentials
+      #   uses: aws-actions/configure-aws-credentials@v1
+      #   with:
+      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     # TODO Change your AWS region here!
+      #     aws-region: us-east-1
+      # - name: Deploy to my EC2 instance
+      #   uses: easingthemes/ssh-deploy@v2.1.6
+      #   env:
+      #     SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+      #     SOURCE: "./"
+      #     REMOTE_HOST: "ec2-3-145-10-182.us-east-2.compute.amazonaws.com"
+      #     REMOTE_USER: "ec2-user"
+      #     TARGET: "/home/ec2-user/SampleExpressApp"
