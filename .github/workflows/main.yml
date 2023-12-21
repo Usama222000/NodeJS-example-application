@@ -24,4 +24,7 @@ jobs:
           npm i
           fi
       - run: sudo docker build -t nodetest .
-      - run: sudo docker run -d -p 5000:5000 nodetest
+      - run: |
+          CONTAINER_NAME=nodejs
+          sudo docker stop $CONTAINER_NAME || true
+          sudo docker run -d -p 5000:5000 --name $CONTAINER_NAME nodetest
