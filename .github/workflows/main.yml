@@ -23,5 +23,5 @@ jobs:
           else
           npm i
           fi
-      - run: docker build -t nodetest .
-      - run: docker run -d -p 5000:5000 nodetest
+      - run: sudo docker build -t nodetest .
+      - run: sudo docker run -d -p 5000:5000 nodetest
