@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout Source
         uses: actions/checkout@v3 
-
+      - run: mkdir test && cd test
       # - name: Configure AWS credentials
       #   uses: aws-actions/configure-aws-credentials@v1
       #   with:
